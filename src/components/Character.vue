@@ -1,35 +1,44 @@
     <template>
-        <li class="character card">
-            <img :src="character.card_image.image_url" alt="">
-            <h3 class="characater__name">{{ character.name }}</h3>
-            <span class="characater__tipe">{{ character.archetype }}</span>
+        <li class="character">
+            <img :src="character.card_images[0].image_url" alt="">
+            <div class="character_name">{{ character.name }}</div>
+            <span class="character_tipe">{{ character.archetype }}</span>
         </li>
     </template>
   
     <script>
         export default {
-        props: {
-            character: {
-            type: Object,
-            required: true
-            },
-        }
+            props: {
+                character: {
+                type: Object,
+                required: true
+                },
+            }
         }
     </script>
   
   <style lang="scss" scoped>
     .character {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
         text-align: center;
+        margin: 15px;
+        padding-bottom: 10px;
+        box-shadow: 4px 4px 5px black;
+
         img {
-        border-radius: 50% ;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-        display: block;
-        margin: 0 auto 24px;
-        
+            object-fit: cover;
+            display: block;
         }
-        .characater__name {
-        font-size: 24px;
+
+    .characater_name {
+        font-size: 28px;
+        color: white;
         }
+    }
+
+    .character_tipe{
+        color: green;
     }
   </style>

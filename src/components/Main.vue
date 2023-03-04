@@ -3,7 +3,7 @@
       <div class="container">
         <ul class="characters">
 
-          <Character v-for="element in store.characters" :key="element.id" :character="element" />
+          <Character v-for="(element,i) in store.characters" :key="i" :character="element" />
   
         </ul>
       </div>
@@ -20,9 +20,7 @@
       },
       data() {
         return {
-          info: {},
           store,
-
         }
       },
       computed: {
@@ -33,26 +31,22 @@
       methods: {
         fetchCharacters() {
           axios
-            .get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+            .get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
             .then((res) => {
-              this.store.characters = res.data.results
+              this.store.characters = res.data.data
             })
         }
       },
       created() {
-        console.log('store',this.store)
         this.fetchCharacters()
       },
     }
   </script>
   
-  <style lang="scss" scoped>
-  .main {
-    padding: 100px 0;
-  }
-  .characters {
-    display: grid;
-    gap: 40px;
-    grid-template-columns: repeat(5,1fr);
-  }
-  </style>
+<style lang="scss" scoped>
+
+.characters {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+}
+</style>

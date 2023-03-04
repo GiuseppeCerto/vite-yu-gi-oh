@@ -21,7 +21,8 @@
   @use '../style/partials/variables' as *;
   .main-header {
     text-align: center;
-    font-size: 20px;
-    padding: 1rem 0;
+    font-size: 28px;
+    padding: 30px 0;
+    text-shadow: 4px 4px rgb(25, 21, 21);
   }
   </style>
