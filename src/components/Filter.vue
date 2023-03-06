@@ -16,5 +16,19 @@
 </script>
 
 <style lang="scss" scoped>
-
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+    .search{
+        width: 300px;
+        height: 40px;
+        background-color: grey;
+        border: 1px solid yellow;
+        margin-bottom: 20px;
+    }
+    .search::placeholder{
+        color: black;
+        font-size: 18px;
+    }
 </style>
