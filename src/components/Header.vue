@@ -18,7 +18,6 @@
   </script>
   
   <style lang="scss" scoped>
-  @use '../style/partials/variables' as *;
   .main-header {
     text-align: center;
     font-size: 28px;
